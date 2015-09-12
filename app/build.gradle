@@ -1,9 +1,16 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        config {
+            keyAlias 'Zoomcar'
+            keyPassword 'zoomcar'
+            storeFile file('/home/sridhar/Desktop/debug.keystore')
+            storePassword 'zoomcar'
+        }
+    }
     compileSdkVersion 21
     buildToolsVersion "21.1.2"
-
     defaultConfig {
         applicationId "com.sri.zoomcar.app"
         minSdkVersion 10
