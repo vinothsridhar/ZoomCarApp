@@ -26,13 +26,19 @@
             android:theme="@android:style/Theme.Black.NoTitleBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
         <activity android:name=".MainActivity"
-            android:label="@string/home_label" />
+            android:label="@string/home_label">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
         <activity android:name=".BookingDetailActivity"
             android:label="@string/booking_detail_label" />
         <activity android:name=".BookingHistoryActivity"
