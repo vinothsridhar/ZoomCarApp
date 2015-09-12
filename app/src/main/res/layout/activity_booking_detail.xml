@@ -1,0 +1,99 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/top_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/card_background_selector">
+
+            <ImageView
+                android:id="@+id/car_image"
+                android:layout_width="@dimen/image_size"
+                android:layout_height="@dimen/image_size"
+                android:layout_margin="5dp"
+                android:layout_centerVertical="true"
+                android:adjustViewBounds="true"
+                android:src="@drawable/logo" />
+
+            <LinearLayout
+                android:id="@+id/product_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_toRightOf="@+id/car_image"
+                android:orientation="vertical" >
+
+                <com.sri.zoomcar.app.views.TextAwesome
+                    android:id="@+id/car_details_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:textSize="18sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="5dp" >
+
+                    <com.sri.zoomcar.app.views.ColoredRatingBar
+                        android:id="@+id/car_rating"
+                        style="@style/coloredRatingBarStyleSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        app:indicator="true"
+                        app:rating="4.2" />
+
+                    <com.sri.zoomcar.app.views.TextAwesome
+                        android:id="@+id/car_rating_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <com.sri.zoomcar.app.views.TextAwesome
+                    android:id="@+id/car_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:padding="3dp"
+                    android:textSize="16sp" />
+
+                <com.sri.zoomcar.app.views.TextAwesome
+                    android:id="@+id/car_seater"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp"
+                    android:drawableLeft="@drawable/seat"
+                    android:gravity="center_vertical"
+                    android:textSize="18sp" />
+                <com.sri.zoomcar.app.views.TextAwesome
+                    android:id="@+id/car_ac"
+                    android:drawableLeft="@drawable/ac"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp"
+                    android:gravity="center_vertical"
+                    android:textSize="18sp" />
+            </LinearLayout>
+        </RelativeLayout>
+        <fragment
+            android:id="@+id/map"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_marginTop="10dp"
+            android:name="com.google.android.gms.maps.SupportMapFragment">
+        </fragment>
+
+    </LinearLayout>
+</ScrollView>

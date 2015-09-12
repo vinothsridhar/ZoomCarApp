@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">ZoomCarApp</string>
+    <string name="home_label">Home</string>
+    <string name="booking_detail_label">Booking Detail</string>
+    <string name="booking_history_label">Booking History</string>
+    <string name="network_error">Unable to connect to network</string>
+    <string name="total_cars">Total Cars: %1$s</string>
+    <string name="total_hits">Total Api Hits: %1$s</string>
+    <string name="map_api_key">AIzaSyCt3GPHyaTluRGf1hDrs7u7PS62letE0f0</string>
+    <string name="share">Share</string>
+    <string name="share_app">Share Via App</string>
+    <string name="share_sms">Share Via SMS</string>
+    <string name="sort">Sort</string>
+    <string name="sort_name">Sort Name</string>
+    <string name="sort_rating">Sort Rating</string>
+    <string name="sort_price">Sort Price</string>
+</resources>
