@@ -105,10 +105,11 @@ public class MainActivity extends BaseActivity {
         } else {
             populateList();
         }
+        getTotalHits();
     }
 
     private void initComponents() {
-        getTotalHits();
+
     }
 
     private void populateList() {

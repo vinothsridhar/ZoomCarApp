@@ -53,6 +53,7 @@ public class CarAdapter extends BaseAdapter {
             holder.ratingBar = (ColoredRatingBar) convertView.findViewById(R.id.car_rating);
             holder.ratingText = (TextAwesome) convertView.findViewById(R.id.car_rating_text);
             holder.carAmount = (TextAwesome) convertView.findViewById(R.id.car_amount);
+            holder.carType = (TextAwesome) convertView.findViewById(R.id.car_type);
             holder.carImage = (ImageView) convertView.findViewById(R.id.car_image);
             convertView.setTag(holder);
         } else {
@@ -64,6 +65,7 @@ public class CarAdapter extends BaseAdapter {
         holder.ratingBar.setRating(carItem.rating);
         holder.ratingText.setText(carItem.rating + "");
         holder.carAmount.setText(carItem.hourly_rate + "/hr");
+        holder.carType.setText(carItem.type);
         ZoomCarApp.getImageLoader(context).DisplayImage(carItem.image, holder.carImage, true);
 
         return convertView;
@@ -74,6 +76,7 @@ public class CarAdapter extends BaseAdapter {
         public ColoredRatingBar ratingBar;
         public TextAwesome carAmount;
         public TextAwesome ratingText;
+        public TextAwesome carType;
         public ImageView carImage;
     }
 }

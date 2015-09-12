@@ -10,6 +10,7 @@
     <string name="share">Share</string>
     <string name="share_app">Share Via App</string>
     <string name="share_sms">Share Via SMS</string>
+    <string name="share_location">Share Car Location</string>
     <string name="sort">Sort</string>
     <string name="sort_name">Sort Name</string>
     <string name="sort_rating">Sort Rating</string>

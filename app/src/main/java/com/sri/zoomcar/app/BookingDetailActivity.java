@@ -50,6 +50,9 @@ public class BookingDetailActivity extends BaseActivity {
             case R.id.share_sms:
                 shareSmsClicked();
                 break;
+            case R.id.share_location:
+                shareLocationClicked();
+                break;
         }
         return super.onOptionsItemSelected(item);
     }
@@ -134,6 +137,12 @@ public class BookingDetailActivity extends BaseActivity {
         sendIntent.setData(Uri.parse("sms:"));
         sendIntent.putExtra("sms_body", getShareBody());
         startActivity(sendIntent);
+    }
+
+    private void shareLocationClicked() {
+        String uri = "geo:" + currentCar.location.latitude + "," + currentCar.location.longitude
+                    + "?q=" + currentCar.location.latitude + "," + currentCar.location.longitude;
+        startActivity(new Intent(android.content.Intent.ACTION_VIEW, Uri.parse(uri)));
     }
 
     private String getShareBody() {
