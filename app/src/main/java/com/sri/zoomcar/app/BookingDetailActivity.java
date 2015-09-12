@@ -15,6 +15,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.sri.zoomcar.app.gson.Car;
+import com.sri.zoomcar.app.utils.L;
 import com.sri.zoomcar.app.views.ColoredRatingBar;
 import com.sri.zoomcar.app.views.TextAwesome;
 
@@ -116,10 +117,16 @@ public class BookingDetailActivity extends BaseActivity {
             if (googleMap == null) {
                 Toast.makeText(getApplicationContext(), "Sorry! unable to create maps", Toast.LENGTH_SHORT).show();
             } else {
-                LatLng carLocation = new LatLng(currentCar.location.latitude, currentCar.location.longitude);
-                Marker location = googleMap.addMarker(new MarkerOptions().position(carLocation).title("Car Location"));
-                googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(carLocation, 15));
-                googleMap.animateCamera(CameraUpdateFactory.zoomTo(10), 2000, null);
+                //Haven't tested it so put it in try/catch
+                try {
+                    LatLng carLocation = new LatLng(currentCar.location.latitude, currentCar.location.longitude);
+                    Marker location = googleMap.addMarker(new MarkerOptions().position(carLocation).title("Car Location"));
+                    googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(carLocation, 15));
+                    googleMap.animateCamera(CameraUpdateFactory.zoomTo(10), 2000, null);
+                } catch (Exception e) {
+                    L.d("Exception while initialize map");
+                }
+
             }
         }
     }
